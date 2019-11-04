@@ -1,0 +1,18 @@
+<div [ngClass]="{
+  'list-group-item': true,
+  'list-group-item-success': count > 0,
+  'list-group-item-danger': count < 0
+  }">
+
+	<div [ngStyle]="{ color: getColor() }">
+		<h2>{{ title }}</h2>
+		<p>{{ created_at | date: 'M/dd/yyyy hh:mm a' }}</p>
+    <p>Likes : {{ count }}</p>
+	</div>
+	<p>{{content}}</p>
+
+	<button class="btn btn-success" (click)="increment()" >Love it!</button> &nbsp;
+	<button class="btn btn-danger" (click)="decrement()">Dont love it!</button>
+
+</div>
+
